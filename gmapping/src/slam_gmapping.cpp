@@ -428,7 +428,7 @@ SlamGMapping::initMapper(const sensor_msgs::LaserScan& scan)
   }
   
   // gmapping doesnt take roll or pitch into account. So check for correct sensor alignment.
-  if (fabs(fabs(up.z()) - 1) > 0.001)
+  if (fabs(fabs(up.z()) - 1) > 0.01)
   {
     ROS_WARN("Laser has to be mounted planar! Z-coordinate has to be 1 or -1, but gave: %.5f",
                  up.z());
